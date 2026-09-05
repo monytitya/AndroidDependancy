@@ -1,4 +1,4 @@
-package com.example.movieapp.data
+package com.example.arc_dp.data
 
 data class Movie(
     val id: Int,

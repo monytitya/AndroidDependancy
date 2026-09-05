@@ -1,21 +1,29 @@
-package com.example.movieapp
+package com.example.arc_dp
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.example.movieapp.ui.MovieScreen
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.runtime.Composable
+import com.example.arc_dp.ui.MovieScreen
 
 class MainActivity : ComponentActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContent {
             MovieAppTheme {
-                MovieScreen()
+                Surface(color = MaterialTheme.colorScheme.background) {
+                    MovieScreen()
+                }
             }
         }
     }
 }
 
-annotation class MovieAppTheme(val value: () -> Unit)
+@Composable
+fun MovieAppTheme(content: @Composable () -> Unit) {
+    MaterialTheme(
+        content = content
+    )
+}
